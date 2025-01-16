@@ -4,18 +4,23 @@ from typing import List
 from lib.data.Size import Size
 
 
+from lib.store import store
+from lib.data.Size import Size
+from lib.data.Metadata import Metadata
+
 class Floor:
     size: Size
-    rooms: List[Room]
+    metadata: Metadata
     
-    def __init__(self, width: int, height: int, rooms: List[Room]) -> None:
-        self.size = Size(width, height)
+    def __init__(self, rooms: List[Room]) -> None:
+        count = store.incr_room()
+        self.metadata = Metadata(
+            id=f'floor_{count}',
+            human_name=f'Floor {count}'
+        )
         self.rooms = rooms
-
-    def __post_init__(self):
-        store.incr_room()
-        self.id = store.get_floor()
-        self.name = f'Floor {self.id}'
+        self.size = Size(0, 0)
     
-    def rename(new_name: str):
-        self.name = new_name
+    def set_size(self, width: int, height: int) -> None:
+        self.size.width = width
+        self.size.height = height
