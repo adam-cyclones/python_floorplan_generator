@@ -10,6 +10,7 @@ python = "^3.10,<3.12"
 shapely = "^2.0.0"
 matplotlib = "^3.7.0"
 networkx = "^3.3"
+pytest = "^8.3.4"
 
 [build-system]
 requires = ["poetry-core"]

@@ -7,4 +7,8 @@ class Building:
     floors: List[Floor]
     
     def __init__(self, width: int, height: int, floors: List[Floor]):
-        size = Size(width, height)
+        self.size = Size(width, height)
+        self.floors = floors
+        
+        for floor in self.floors:
+            floor.set_size(width, height)
