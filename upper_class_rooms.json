@@ -1,0 +1,108 @@
+{
+    "Outside": {
+      "floor": "Outside",
+      "size": [0, 0],
+      "mandatory": true
+    },
+    "Entrance Hall": {
+      "floor": "F1",
+      "size": [4, 5],
+      "mandatory": true
+    },
+    "Hallway": {
+      "floor": "F1",
+      "size": [2, 6],
+      "mandatory": true
+    },
+    "Kitchen": {
+      "floor": "F1",
+      "size": [4, 5],
+      "mandatory": true
+    },
+    "Staircase": {
+      "floor": "F1",
+      "size": [2, 3],
+      "mandatory": true
+    },
+    "Bathroom": {
+      "floor": "F2",
+      "size": [3, 3],
+      "mandatory": true
+    },
+    "Drawing Room": {
+      "floor": "F1",
+      "size": [5, 6],
+      "mandatory": true
+    },
+    "Dining Room": {
+      "floor": "F1",
+      "size": [5, 5],
+      "mandatory": true
+    },
+    "Study": {
+      "floor": "F1",
+      "size": [4, 4],
+      "mandatory": false,
+      "probability": 0.8
+    },
+    "Library": {
+      "floor": "F1",
+      "size": [5, 5],
+      "mandatory": false,
+      "probability": 0.7
+    },
+    "Conservatory": {
+      "floor": "F1",
+      "size": [4, 4],
+      "mandatory": false,
+      "probability": 0.6
+    },
+    "Scullery": {
+      "floor": "F1",
+      "size": [3, 3],
+      "mandatory": false,
+      "probability": 0.9
+    },
+    "Pantry": {
+      "floor": "F1",
+      "size": [2, 3],
+      "mandatory": false,
+      "probability": 0.9
+    },
+    "Master Bedroom": {
+      "floor": "F2",
+      "size": [5, 6],
+      "mandatory": true
+    },
+    "Guest Bedroom": {
+      "floor": "F2",
+      "size": [4, 5],
+      "mandatory": false,
+      "probability": 0.8
+    },
+    "Nursery": {
+      "floor": "F2",
+      "size": [4, 4],
+      "mandatory": false,
+      "probability": 0.7
+    },
+    "Servants' Quarters": {
+      "floor": "F2",
+      "size": [3, 4],
+      "mandatory": false,
+      "probability": 0.9
+    },
+    "Attic": {
+      "floor": "F3",
+      "size": [5, 5],
+      "mandatory": false,
+      "probability": 0.5
+    },
+    "Cellar": {
+      "floor": "Basement",
+      "size": [5, 5],
+      "mandatory": false,
+      "probability": 0.8
+    }
+  }
+  
