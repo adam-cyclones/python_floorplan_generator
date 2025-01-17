@@ -12,5 +12,5 @@ class Room:
         self.metadata = Metadata(id=f"room_{count}", human_name=f"Room {count}")
         self.size = Size(width, height)
 
-    def rename(new_name: str):
+    def rename(self, new_name: str):
         self.name = new_name

@@ -11,5 +11,8 @@ class Building:
         self.size = Size(width, height)
         self.floors = floors
 
+        if width < 0 or height < 0:
+            raise ValueError("Building size cannot be negative")
+
         for floor in self.floors:
             floor.set_size(width, height)

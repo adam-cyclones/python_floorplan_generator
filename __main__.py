@@ -3,7 +3,7 @@ from lib.data.Floor import Floor
 from lib.data.Building import Building
 from dataclasses import asdict
 
-print(Building(0, 0, Floor(0, 0, [Room(0, 0)])))
+print(Building(width=0, height=0, floors=[Floor(Room(0, 0), Room(0, 0))]))
 
 
 # import json
