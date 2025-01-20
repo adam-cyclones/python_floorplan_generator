@@ -22,7 +22,7 @@ def test_floors_cannot_extend_beyond_building():
 
 
 def test_floor_has_rooms():
-    floor = Floor(Room(0, 0), Room(0, 0))
+    floor = Floor(Room(), Room())
 
     assert len(floor.rooms) == 2
 

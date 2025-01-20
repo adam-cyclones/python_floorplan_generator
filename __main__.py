@@ -1,9 +1,20 @@
 from lib.data.Room import Room
 from lib.data.Floor import Floor
 from lib.data.Building import Building
-from dataclasses import asdict
+import libsql_client
 
-print(Building(width=0, height=0, floors=[Floor(Room("Hallway"), Room("Living Room"))]))
+client = libsql_client.create_client_sync("file:rules.db")
+result = client.execute("SELECT * FROM room_categories;")
+
+for row in result.rows:
+    print(row)
+client.close()
+
+
+floor_1 = Floor(Room("Hallway"), Room("Living Room"))
+floor_2 = Floor(Room("Hallway"), Room("Living Room"))
+
+print(Building(0, 0, [floor_1, floor_2]))
 
 
 # import json
