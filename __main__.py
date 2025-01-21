@@ -1,15 +1,11 @@
 from lib.data.Room import Room
 from lib.data.Floor import Floor
 from lib.data.Building import Building
-import libsql_client
+from db.create_schema import create_schema
+from db.seed import seed
 
-client = libsql_client.create_client_sync("file:rules.db")
-result = client.execute("SELECT * FROM room_categories;")
-
-for row in result.rows:
-    print(row)
-client.close()
-
+create_schema()
+seed()
 
 floor_1 = Floor(Room("Hallway"), Room("Living Room"))
 floor_2 = Floor(Room("Hallway"), Room("Living Room"))
