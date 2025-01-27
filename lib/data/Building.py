@@ -16,3 +16,9 @@ class Building:
 
         for floor in self.floors:
             floor.set_size(width, height)
+    
+    def to_dict(self):
+        """Convert Building to a dictionary for JSON serialization."""
+        return {
+            "floors": [floor.to_dict() for floor in self.floors]
+        }
