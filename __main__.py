@@ -1,6 +1,7 @@
 from lib.data.Room import Room
 from lib.data.Floor import Floor
 from lib.data.Building import Building
+from lib.generator.Generator import Generator
 from db.create_schema import create_schema
 from db.seed import seed
 
@@ -10,8 +11,9 @@ seed()
 floor_1 = Floor(Room("Hallway"), Room("Living Room"))
 floor_2 = Floor(Room("Hallway"), Room("Living Room"))
 
-print(Building(0, 0, [floor_1, floor_2]))
+building = Building(0, 0, [floor_1, floor_2])
 
+print(Generator(building).to_json())
 
 # import json
 # import random
