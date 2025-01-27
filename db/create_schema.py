@@ -12,6 +12,22 @@ def create_schema():
     );
     ''')
     cursor.execute('''
+    CREATE TABLE IF NOT EXISTS passage_types (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT NOT NULL UNIQUE
+    );
+    ''')
+    cursor.execute('''
+    CREATE TABLE IF NOT EXISTS room_types__passage_types (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        room_type_id INTEGER NOT NULL,
+        passage_type_id INTEGER NOT NULL,
+        allowed BOOLEAN,
+        FOREIGN KEY (room_type_id) REFERENCES room_types(id),
+        FOREIGN KEY (passage_type_id) REFERENCES passage_types(id)
+    );
+    ''')
+    cursor.execute('''
     CREATE TABLE IF NOT EXISTS constraints (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         room_type_id INTEGER NOT NULL,

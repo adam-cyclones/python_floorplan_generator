@@ -1,9 +1,9 @@
 import sqlite3
 from db.queries.room_types import get_room_id_by_name
+from .db import get_conn, get_cursor
 
-conn = sqlite3.connect('db/rules.db')
-cursor = conn.cursor()
-
+conn = get_conn()
+cursor = get_cursor()
 def get_max_connections(room_type_name: str) -> int:
     room_type_id = get_room_id_by_name(room_type_name)
     
