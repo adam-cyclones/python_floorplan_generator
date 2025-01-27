@@ -13,7 +13,7 @@ class Room:
     def __init__(self, type: str) -> None:
         store.incr_room()
         count = store.get_room()
-        self.metadata = Metadata(id=format_id(f"room_{type}_{count}"), human_name=f"Room: {type} ({count})")
+        self.metadata = Metadata(id=format_id(f"room_{count}"), human_name=f"Room: {type}")
         self.position = Position(0, 0)
         self.size = Size(0, 0)
         

@@ -13,7 +13,7 @@ floor_2 = Floor(Room("Hallway"), Room("Living Room"))
 
 building = Building(0, 0, [floor_1, floor_2])
 
-print(Generator(building).to_json())
+print(Generator(building, num_floors=3).to_json())
 
 # import json
 # import random

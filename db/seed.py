@@ -58,7 +58,7 @@ def seed():
         cursor = get_cursor()
 
         # Define the seed data
-        room_types = ['Hallway', 'Living Room', 'Kitchen', 'Bathroom', 'Bedroom', 'Outside']
+        room_types = ['Hallway', 'Living Room', 'Kitchen', 'Bathroom', 'Bedroom', 'Outside', 'Stairs']
         
         constraints = {
             'Hallway': 4,      # Hallways can connect to multiple rooms
@@ -66,11 +66,14 @@ def seed():
             'Kitchen': 2,
             'Bathroom': 1,
             'Bedroom': 2,
-            'Outside': 1
+            'Outside': 1,
+            'Stairs': 2
         }
         
         # Define valid connections between room types
         connections = [
+            ('Stairs', 'Hallway'),
+            ('Stairs', 'Living Room'),
             ('Hallway', 'Bathroom'),
             ('Hallway', 'Bedroom'),
             ('Hallway', 'Kitchen'),
@@ -82,12 +85,17 @@ def seed():
         ]
 
         passages = [
+            "Bottom of Stair",
+            "Top of Stair",
             'Door',
             'Arch',
             'External Door'
         ]
 
         room_types__passage_types = [
+            ("Stairs", "Bottom of Stair", True),
+            ("Stairs", "Top of Stair", True),
+            
             ("Hallway", "Door", True),
             ("Hallway", "Arch", True),
             ("Hallway", "External Door", True),

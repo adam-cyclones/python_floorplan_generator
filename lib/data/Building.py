@@ -1,5 +1,6 @@
 from lib.data.Size import Size
 from lib.data.Floor import Floor
+from lib.data.Room import Room
 from typing import List
 
 
@@ -17,6 +18,14 @@ class Building:
         for floor in self.floors:
             floor.set_size(width, height)
     
+    def add_roots(self):
+        for floor in self.floors:
+            if floor.metadata.id == "floor_1":
+                root = Room("Outside")
+                floor.add_root(root)
+            else:
+                root = Room("Stairs")
+                floor.add_root(root)
     def to_dict(self):
         """Convert Building to a dictionary for JSON serialization."""
         return {
